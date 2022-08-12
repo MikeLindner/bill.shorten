@@ -16,13 +16,11 @@ Having your own URL Shortener is all the rage with the cool kids now, so thanks 
 
 Then...
 
-1. Move `bill.sh` to somewhere like ~/bin
-2. Change it's permissions to execute: `chmod u+x bill.sh`
-3. Create a symlink somehwere in your shell's $PATH to `bill`
+* Move `bill.sh` to somewhere in your shell's $PATH
 
 ### Running
-* Run the bill.sh script however you like.  If you've created the link above just typing `bill` at the command line should do it!
-* Rename the script or the link however you like, it's name doesn't matter at all.
+* Run the bill.sh script however you like.  moved it during "installation" just typing `bill.sh` at the command line should do it!
+* Rename the script however you like, it's name doesn't matter at all.
 
 ### About the links file
 
