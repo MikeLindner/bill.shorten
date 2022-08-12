@@ -3,7 +3,7 @@ bill.sh is a miniscule script that creates a simple redirect page in a static we
 
 Having your own URL Shortener is all the rage with the cool kids now, so thanks to Bill, you can now have your own!
 
-You will need:
+### You will need:
 * An AWS account
 * An S3 bucket set up for static web hosting
 * The AWS CLI tools on your system
