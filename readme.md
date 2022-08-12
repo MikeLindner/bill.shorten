@@ -18,7 +18,11 @@ Then...
 
 1. Move `bill.sh` to somewhere like ~/bin
 2. Change it's permissions to execute: `chmod u+x bill.sh`
-3. Create a symlink somehwere in your shell's $PATH
+3. Create a symlink somehwere in your shell's $PATH to `bill`
+
+### Running
+* Run the bill.sh script however you like.  If you've created the link above just typing `bill` at the command line should do it!
+* Rename the script or the link however you like, it's name doesn't matter at all.
 
 ### About the links file
 
