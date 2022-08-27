@@ -19,7 +19,7 @@ Then...
 * Move `bill.sh` to somewhere in your shell's $PATH
 
 ### Running
-* Run the bill.sh script however you like.  moved it during "installation" just typing `bill.sh` at the command line should do it!
+* Run the bill.sh script however you like.  Because we moved it during "installation" just typing `bill.sh` at the command line should do it!  I go one quantum further and create a symlink so I can just type "bill".
 * Rename the script however you like, it's name doesn't matter at all.
 
 ### About the links file
