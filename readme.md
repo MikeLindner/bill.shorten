@@ -23,6 +23,7 @@ Then...
 ### Running
 * Run the bill.sh script however you like.  Because we moved it during "installation" just typing `bill.sh` at the command line should do it!  I go one quantum further and create a symlink so I can just type "bill".
 * Rename the script however you like, it's name doesn't matter at all.
+* Remember: the randoms file and the actual links all reside in your s3 bucket, so deleting anything locally won't hurt it.
 
 ### About the links file
 
