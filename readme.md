@@ -11,9 +11,9 @@ Having your own URL Shortener is all the rage with the cool kids now, so thanks 
 * An AWS account
 * An S3 bucket set up for static web hosting
 * The AWS CLI tools on your local system
-* AWS CLI Credentials validated, logged in.
+* AWS CLI Credentials validated, logged in
 * Permissions for your CLI to read and write your bucket
-* CUSTOMISE the pictures and the code for yourself.
+* CUSTOMISE the pictures and the code for yourself
 
 ### Installation
 * First place all the files except `bill.sh` in your s3 bucket's root.
