@@ -1,5 +1,7 @@
 ![Demo](https://raw.githubusercontent.com/MikeLindner/bill.shorten/master/en_operation.png)
 
+<a href="https://mikes.link/929">https://mikes.link/929<a>
+
 ## bill.sh
 bill.sh is a miniscule script that creates a simple redirect page on a static website, hosted in an AWS S3 Bucket.
 
