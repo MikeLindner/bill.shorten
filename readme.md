@@ -1,8 +1,8 @@
 ## bill.sh
 ##### A Very Tiny URL Shortener
-bill.sh is a miniscule script that creates a simple redirect page on a static website, hosted in an AWS S3 Bucket.
+bill.sh is a miniscule script - 12 active lines - that creates a simple redirect page on a static website, hosted in an AWS S3 Bucket.
 
-Having your own URL Shortener is all the rage with the cool kids now, so thanks to Bill, you can now have your own!
+Having your own URL Shortener is all the rage with the cool kids now, so thanks to Bill, you can now have your own!  This one is pretty agricultural :) There are no bells and whistles, but it totally works, each object can take 5,500 hits per second with eleven-nines reliability.  What's not to love about S3!
 
 ![Demo](https://raw.githubusercontent.com/MikeLindner/bill.shorten/master/en_operation.png)
 
