@@ -37,8 +37,8 @@ The `randoms` file just needs to be filled with one unique URL-valid value per l
 ## Bill Shorten
 <p align="center">Bill Shorten is the Member of the Australian Parliament for Maribyrnong.  </p>
 
-<p align="center">Previously Leader of the Australian Labor Party,</p>
-<p align="center">he has also been National Secretary</p> 
-<p align="center">of the Australian Workers Union. </p>
+<p align="center">Previously Leader of the Australian Labor Party,
+he has also been National Secretary
+of the Australian Workers Union. </p>
 
 <p align="center">🇦🇺 This program has nothing at all to do with Mr Shorten, other than being named for him.  On Ya Bill 👍 </p>
