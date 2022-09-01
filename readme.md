@@ -39,5 +39,5 @@ Bill Shorten is the Member of the Australian Parliament for Maribyrnong.
 
 Previously Leader of the Australian Labor Party he has also been National Secretary of the Australian Workers Union.
 
-This program has nothing at all to do with Bill, other than being named for him.
+## This program has nothing at all to do with Mr Shorten, other than being named in his honor.
 
