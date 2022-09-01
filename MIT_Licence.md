@@ -1,8 +1,8 @@
-*** bill.sh (c) mike lindner 2022
+### bill.sh (c) mike lindner 2022
 This is completely free and open source code.
 Please do anything you like with it, except say you wrote it :)
 
-The MIT License (MIT)
+### The MIT License (MIT)
 
 Copyright © 2022 <copyright holders>
 
