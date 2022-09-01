@@ -1,6 +1,6 @@
-Bill.Shorten is completely free and open source code.
-
-Please do anything you like with it.
+*** bill.sh (c) mike lindner 2022
+This is completely free and open source code.
+Please do anything you like with it, except say you wrote it :)
 
 The MIT License (MIT)
 
