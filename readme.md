@@ -35,8 +35,8 @@ The `randoms` file just needs to be filled with one unique URL-valid value per l
 ***
 
 ## Bill Shorten
-Bill Shorten is the Member of the Australian Parliament for Maribyrnong.  
+<p align="center">Bill Shorten is the Member of the Australian Parliament for Maribyrnong.  
 
 Previously Leader of the Australian Labor Party he has also been National Secretary of the Australian Workers Union.
 
-<p align="center"> 🇦🇺 This program has nothing at all to do with Mr Shorten, other than being named for him.  On Ya Bill 👍
+🇦🇺 This program has nothing at all to do with Mr Shorten, other than being named for him.  On Ya Bill 👍
