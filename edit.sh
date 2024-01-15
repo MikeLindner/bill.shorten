@@ -8,13 +8,16 @@ for i in $(aws s3 ls s3://mikes.link/ | \
 	awk '{print substr($0, index($0, "PRE")+length("PRE"))}' | \
 	grep -v "^22|^23" | \
 	sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'); 
+	
 do ((num++)); echo -n $i >> /tmp/out.tmp; 
 	curl --silent https://mikes.link/$i | \
 	# ONLY THE window-location LINE, MINUS THE WORDS "window-location"
 	grep window.location  | \
 	sed 's/window.location = //' >> /tmp/out.tmp ;
 	# PRINT PROGRESS
-	printf "%s\r" "getting link $num" ;done
+	printf "%s\r" "getting data $num" ;
+	
+	done
 	sed -i '$d' /tmp/out.tmp
 		
 echo
