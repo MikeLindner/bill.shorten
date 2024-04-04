@@ -8,7 +8,6 @@ Having your own URL Shortener is all the rage with the cool kids now, so thanks 
 
 <a href="https://mikes.link/929">https://mikes.link/929<a>
 
-### https://mikes.link/929/index.html
 ```html
 <!doctype html>
 <html lang="en">
@@ -32,6 +31,7 @@ Having your own URL Shortener is all the rage with the cool kids now, so thanks 
 
 </html>
 ```
+Source of `https://mikes.link/929/index.html`
 
 ### You will need:
 * An AWS account
