@@ -1,7 +1,6 @@
 #!/bin/bash
 tput civis  # hide cursor
 
-
 ## Create a list of index.html files with their prefix
 aws s3 ls s3://mikes.link --recursive | grep index.html > /tmp/temp.out
 awk '{print $4}' /tmp/temp.out > /tmp/list.out
