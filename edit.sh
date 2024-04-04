@@ -2,6 +2,7 @@
 tput civis
 clear
 rm /tmp/out.tmp
+
 num=1
 
 for i in $(aws s3 ls s3://mikes.link/ | \
