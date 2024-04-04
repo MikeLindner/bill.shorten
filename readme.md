@@ -8,6 +8,31 @@ Having your own URL Shortener is all the rage with the cool kids now, so thanks 
 
 <a href="https://mikes.link/929">https://mikes.link/929<a>
 
+```
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Bill!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../mikes.link.css">
+        <meta property=og:image content=../star.png />
+        <script type = "text/javascript">
+            window.location = "https://en.wikipedia.org/wiki/Bill_Shorten";
+        </script>  
+    <head>
+
+    <body>
+        <img src="star.png" alt="star"/>
+        <br><br><br>
+        <p><a href="https://mikelindner.com">by mikelindner.com</a></p>
+    </body>
+
+</html>
+```
+
+
 ### You will need:
 * An AWS account
 * An S3 bucket set up for static web hosting
