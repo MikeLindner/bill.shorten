@@ -36,7 +36,7 @@ Source of https://mikes.link/929/index.html
 
 ### You will need:
 * An AWS account
-* An S3 bucket set up for static web hosting
+* An S3 bucket set up for static web hosting, the DNS should be hosted on Route53 as you need an AWS "Alias" to the S3 bucket.
 * The AWS CLI tools on your local system
 * AWS CLI Credentials validated, logged in
 * Permissions for your CLI to read and write your bucket
