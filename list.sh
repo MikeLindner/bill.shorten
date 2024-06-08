@@ -10,6 +10,7 @@ awk '{print $4}' /tmp/temp.out > /tmp/list.out
 for i in $(cat /tmp/list.out)
 
 do ((num++)); echo -n $i >> /tmp/out.tmp; 
+	echo -n $i;
 	curl https://mikes.link/$i;	
 done
 
