@@ -28,7 +28,7 @@ Source of https://mikes.link/929/index.html
     <body>
         <img src="star.png" alt="star"/>
         <br><br><br>
-        <p><a href="https://mikelindner.com.au">by mikelindner.com</a></p>
+        <p><a href="https://mikelindner.com.au">by mikelindner.com.au</a></p>
     </body>
 
 </html>
