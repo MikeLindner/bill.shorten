@@ -38,7 +38,7 @@ echo "
 " > /tmp/index.html
 
 # upload index page
-aws s3 cp --quiet /tmp/index.html s3://mikes.link/$linknumber/
+aws s3 cp --quiet /tmp/index.html s3://mikes.page/$linknumber/
 
 # put the list of available links back up
 aws s3 cp --quiet /tmp/randoms s3://mikes.page/
@@ -47,5 +47,5 @@ aws s3 cp --quiet /tmp/randoms s3://mikes.page/
 rm /tmp/index.html
 rm /tmp/randoms
 
-echo "https://mikes.link/$linknumber"
+echo "https://mikes.page/$linknumber"
 
