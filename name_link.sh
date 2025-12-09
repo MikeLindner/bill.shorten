@@ -14,7 +14,7 @@ echo "
         <meta charset=\"utf-8\">
         <title>$destitle</title>
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-        <link rel=\"stylesheet\" href=\"../mikes.link.css\">
+        <link rel=\"stylesheet\" href=\"../mikes.page.css\">
         <meta property="og:image" content="../star.png" />
         <script type = \"text/javascript\">
             window.location = \"$urlink\";
@@ -31,10 +31,10 @@ echo "
 " > /tmp/index.html
 
 # upload index page
-aws s3 cp --quiet /tmp/index.html s3://mikes.link/$shortlink/
+aws s3 cp --quiet /tmp/index.html s3://mikes.page/$shortlink/ --profile mikes.page
 
 # clean up
 rm /tmp/index.html
 
-echo "https://mikes.link/$shortlink"
+echo "https://mikes.page/$shortlink"
 
