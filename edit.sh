@@ -5,13 +5,13 @@ rm /tmp/out.tmp
 
 num=1
 
-for i in $(aws s3 ls s3://mikes.link/ | \
+for i in $(aws s3 ls s3://mikes.page/ | \
 	awk '{print substr($0, index($0, "PRE")+length("PRE"))}' | \
 	grep -v "^22|^23" | \
 	sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'); 
 	
 do ((num++)); echo -n $i >> /tmp/out.tmp; 
-	curl --silent https://mikes.link/$i | \
+	curl --silent https://mikes.page/$i | \
 	# ONLY THE window-location LINE, MINUS THE WORDS "window-location"
 	grep window.location  | \
 	sed 's/window.location = //' >> /tmp/out.tmp ;
