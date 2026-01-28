@@ -13,10 +13,16 @@ function getAWSCredentials() {
   
   try {
     const credentials = fs.readFileSync(credentialsPath, 'utf8');
-    const profileMatch = credentials.match(/\[mikes\.page\]\s*\n\s*aws_access_key_id\s*=\s*(\S+)\s*\n\s*aws_secret_access_key\s*=\s*(\S+)/);
-    if (profileMatch) {
-      accessKeyId = profileMatch[1];
-      secretAccessKey = profileMatch[2];
+    // Find the mikes.page section and extract credentials
+    const sections = credentials.split(/\[/);
+    for (const section of sections) {
+      if (section.startsWith('mikes.page]')) {
+        const keyMatch = section.match(/aws_access_key_id\s*=\s*(\S+)/);
+        const secretMatch = section.match(/aws_secret_access_key\s*=\s*(\S+)/);
+        if (keyMatch) accessKeyId = keyMatch[1];
+        if (secretMatch) secretAccessKey = secretMatch[1];
+        break;
+      }
     }
   } catch (e) {
     console.error('Could not read AWS credentials:', e);
@@ -24,7 +30,7 @@ function getAWSCredentials() {
   
   try {
     const config = fs.readFileSync(configPath, 'utf8');
-    const regionMatch = config.match(/\[profile mikes\.page\]\s*[\s\S]*?region\s*=\s*(\S+)/);
+    const regionMatch = config.match(/\[profile mikes\.page\][\s\S]*?region\s*=\s*(\S+)/);
     if (regionMatch) {
       region = regionMatch[1];
     }
@@ -32,15 +38,22 @@ function getAWSCredentials() {
     // Use default region
   }
   
+  console.log('AWS Credentials loaded:', { accessKeyId: accessKeyId ? '***' : 'MISSING', region });
   return { accessKeyId, secretAccessKey, region };
 }
 
 const awsCreds = getAWSCredentials();
+
+if (!awsCreds.accessKeyId || !awsCreds.secretAccessKey) {
+  console.error('ERROR: AWS credentials not found for mikes.page profile!');
+  console.error('Please run: aws configure --profile mikes.page');
+}
+
 const s3Client = new S3Client({
   region: awsCreds.region,
   credentials: {
-    accessKeyId: awsCreds.accessKeyId,
-    secretAccessKey: awsCreds.secretAccessKey
+    accessKeyId: awsCreds.accessKeyId || '',
+    secretAccessKey: awsCreds.secretAccessKey || ''
   }
 });
 
@@ -81,18 +94,22 @@ app.on('activate', () => {
 
 // IPC Handlers
 ipcMain.handle('create-short-link', async (event, { url, title }) => {
+  console.log('Creating short link for:', url);
   try {
     // Get randoms file
+    console.log('Fetching randoms file...');
     const getCommand = new GetObjectCommand({ Bucket: BUCKET, Key: 'randoms' });
     const response = await s3Client.send(getCommand);
     const randomsContent = await response.Body.transformToString();
     
     const lines = randomsContent.split('\n').filter(line => line.trim());
+    console.log('Available links:', lines.length);
     if (lines.length === 0) {
       throw new Error('No more short links available!');
     }
     
-    const linkNumber = lines[0];
+    const linkNumber = lines[0].trim();
+    console.log('Using link number:', linkNumber);
     const remainingLinks = lines.slice(1).join('\n');
     
     // Create the redirect HTML
@@ -116,22 +133,27 @@ ipcMain.handle('create-short-link', async (event, { url, title }) => {
 </html>`;
 
     // Upload the index.html
+    console.log('Uploading index.html to', `${linkNumber}/index.html`);
     await s3Client.send(new PutObjectCommand({
       Bucket: BUCKET,
       Key: `${linkNumber}/index.html`,
       Body: htmlContent,
       ContentType: 'text/html'
     }));
+    console.log('Upload successful!');
     
     // Update randoms file
+    console.log('Updating randoms file...');
     await s3Client.send(new PutObjectCommand({
       Bucket: BUCKET,
       Key: 'randoms',
       Body: remainingLinks,
       ContentType: 'text/plain'
     }));
+    console.log('Randoms updated!');
     
     const shortUrl = `https://mikes.page/${linkNumber}`;
+    console.log('Created:', shortUrl);
     return { success: true, shortUrl, remaining: lines.length - 1 };
     
   } catch (error) {
